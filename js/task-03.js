@@ -14,15 +14,15 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-const retArray = [ ];
-for (const image of images){
-  const li = document.createElement("li");
-  const img = document.createElement('img');
-  img.setAttribute('href', image.url);
-  img.setAttribute('alt', image.alt);
-  li.append(img);
-  retArray.push(li);
-}
 
-console.log(retArray);
-retArray.map(element => gallery.append(element));
+const imagesMarkup = images.map((image)=>
+  `
+    <li>
+      <img src="${image.url}" alt="{image.alt} width = "250" height = "150">
+    </li>
+  
+  `
+).join("")
+
+
+gallery.insertAdjacentHTML("beforebegin", imagesMarkup)
