@@ -15,4 +15,12 @@ function handleSubmit(event){
 
     console.log(`Email: ${email.value}, Password: ${password.value.trim()}`);
     event.currentTarget.reset();
+    
+    const formData = {
+        email: email.value,
+        password: password.value,
+      };
+     console.log(formData);
+
 }
+
